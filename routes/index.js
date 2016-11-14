@@ -13,7 +13,6 @@ router.get('/twitter/accounts', function(req, res, next) {
   //   }, this);
   // })
   mongo.getall_twitter_accounts((accounts) =>{
-    console.log(accounts);
     res.render('index', { title: twitterkeys.consumerSecret, accounts: accounts });
   })
 });
