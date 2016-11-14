@@ -6,7 +6,7 @@ var twitterkeys = require('../lib/twitterkeys');
 var mongo = require('../lib/mongodb');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/twitter/accounts', function(req, res, next) {
   // twitter.tom((x) => {
   //   x.forEach(function(element) {
   //     console.log(element.text);
@@ -18,8 +18,8 @@ router.get('/', function(req, res, next) {
   })
 });
 
-// router.get('adduser', function(req, res, next){
-//   res.send(req);
-// });
+router.get('/twitter/something', function(req, res, next){
+  res.render('index', { title: twitterkeys.consumerSecret, accounts: [] });
+});
 
 module.exports = router;
