@@ -12,8 +12,10 @@ router.get('/', function(req, res, next) {
   //     console.log(element.text);
   //   }, this);
   // })
-  mongo.test();
-  res.render('index', { title: twitterkeys.consumerSecret });
+  mongo.getall_twitter_accounts((accounts) =>{
+    console.log(accounts);
+    res.render('index', { title: twitterkeys.consumerSecret, accounts: accounts });
+  })
 });
 
 // router.get('adduser', function(req, res, next){

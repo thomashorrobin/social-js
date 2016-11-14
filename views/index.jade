@@ -3,3 +3,16 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  div
+    table
+      thead
+        tr
+          th= "id"
+          th= "name"
+          th= "screen name"
+      tbody
+        each account in accounts
+          tr
+            td= account.id_str
+            td= account.name
+            td= account.screen_name
